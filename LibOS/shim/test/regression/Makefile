@@ -16,6 +16,7 @@ c_executables = \
 	debug \
 	dev \
 	device \
+	device_enclave \
 	epoll_wait_timeout \
 	eventfd \
 	exec \
@@ -94,6 +95,7 @@ repo_manifests = \
 	argv_from_file.manifest \
 	debug_log_file.manifest \
 	debug_log_inline.manifest \
+	device_enclave.manifest \
 	env_from_file.manifest \
 	env_from_host.manifest \
 	file_check_policy_allow_all_but_log.manifest \
@@ -154,6 +156,9 @@ CFLAGS-attestation += -I$(PALDIR)/../lib/crypto/mbedtls/crypto/include \
                       -I$(PALDIR)/host/Linux-SGX \
                       -I$(PALDIR)/../include/pal
 LDLIBS-attestation += $(PALDIR)/../lib/crypto/mbedtls/install/lib/libmbedcrypto.a
+
+CFLAGS-device_enclave += -I$(PALDIR)/host/Linux-SGX \
+                         -I$(PALDIR)/../include/pal
 
 CFLAGS-fp_multithread += -pthread -fno-builtin  # see comment in the test's source
 LDLIBS-fp_multithread += -lm
