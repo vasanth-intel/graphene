@@ -362,11 +362,7 @@ int get_ipc_info_cur_process(struct shim_ipc_info** info) {
     lock(&g_process_ipc_info.lock);
 
     if (!g_process_ipc_info.self) {
-        g_process_ipc_info.self = create_ipc_info_and_port(/*use_vmid_as_port_name=*/true);
-        if (!g_process_ipc_info.self) {
-            unlock(&g_process_ipc_info.lock);
-            return -EACCES;
-        }
+        BUG();
     }
 
     get_ipc_info(g_process_ipc_info.self);

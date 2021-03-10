@@ -89,7 +89,7 @@ static int init_self_ipc_port(void) {
 }
 
 static int init_parent_ipc_port(void) {
-    if (!PAL_CB(parent_process) || !g_process_ipc_info.parent) {
+    if (!PAL_CB(parent_process)) {
         /* no parent process, no sense in creating parent IPC port */
         return 0;
     }
