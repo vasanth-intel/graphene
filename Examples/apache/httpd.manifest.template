@@ -68,15 +68,7 @@ sgx.thread_num = 32
 # SGX trusted files
 
 sgx.trusted_files.httpd = "file:$(INSTALL_DIR)/bin/httpd"
-
-# Glibc libraries
-sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
-sgx.trusted_files.libm = "file:$(GRAPHENEDIR)/Runtime/libm.so.6"
-sgx.trusted_files.libdl = "file:$(GRAPHENEDIR)/Runtime/libdl.so.2"
-sgx.trusted_files.librt = "file:$(GRAPHENEDIR)/Runtime/librt.so.1"
-sgx.trusted_files.libutil = "file:$(GRAPHENEDIR)/Runtime/libutil.so.1"
-sgx.trusted_files.libpthread = "file:$(GRAPHENEDIR)/Runtime/libpthread.so.0"
+sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
 
 # Other libraries required by Apache
 sgx.trusted_files.libgcc_s = "file:$(ARCH_LIBDIR)/libgcc_s.so.1"

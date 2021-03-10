@@ -76,15 +76,7 @@ sgx.thread_num = 128
 # SGX trusted libraries
 
 sgx.trusted_files.python3 = "file:$(PYTHON3)"
-sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
-sgx.trusted_files.libdl = "file:$(GRAPHENEDIR)/Runtime/libdl.so.2"
-sgx.trusted_files.libm = "file:$(GRAPHENEDIR)/Runtime/libm.so.6"
-sgx.trusted_files.libpthread = "file:$(GRAPHENEDIR)/Runtime/libpthread.so.0"
-sgx.trusted_files.libresolv = "file:$(GRAPHENEDIR)/Runtime/libresolv.so.2"
-sgx.trusted_files.librt = "file:$(GRAPHENEDIR)/Runtime/librt.so.1"
-sgx.trusted_files.libutil = "file:$(GRAPHENEDIR)/Runtime/libutil.so.1"
-sgx.trusted_files.libnssdns = "file:$(GRAPHENEDIR)/Runtime/libnss_dns.so.2"
+sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
 
 sgx.trusted_files.libstdc = "file:/usr/$(ARCH_LIBDIR)/libstdc++.so.6"
 sgx.trusted_files.libgccs = "file:$(ARCH_LIBDIR)/libgcc_s.so.1"
@@ -178,4 +170,3 @@ sgx.nonpie_binary = 1
 # OpenMP functions.
 
 # loader.env.LD_PRELOAD = "/lib/libgomp.so.1"
-# sgx.trusted_files.libgomp = "file:$(GRAPHENEDIR)/Runtime/libgomp.so.1"

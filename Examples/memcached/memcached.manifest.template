@@ -140,11 +140,8 @@ sgx.thread_num = 16
 
 sgx.trusted_files.memcached = "file:memcached"
 
-# Glibc libraries. ld and libc are needed for all apps; pthread is needed
-# because Memcached is multi-threaded.
-sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
-sgx.trusted_files.libpthread = "file:$(GRAPHENEDIR)/Runtime/libpthread.so.0"
+# Glibc libraries.
+sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
 
 # Name Service Switch (NSS) libraries. Glibc calls these libraries as part of
 # name-service information gathering. libnss_{compat,files,nis} are the

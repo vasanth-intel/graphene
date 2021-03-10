@@ -87,12 +87,7 @@ fs.mount.etc.uri = "file:/etc"
 # this happens on the client machine.
 
 sgx.trusted_files.busybox = "file:busybox"
-
-# Glibc libraries.
-sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
-sgx.trusted_files.libresolv = "file:$(GRAPHENEDIR)/Runtime/libresolv.so.2"
-sgx.trusted_files.libm = "file:$(GRAPHENEDIR)/Runtime/libm.so.6"
+sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
 
 # libcrypt is an explicit dependency of Busybox. We choose to install it on
 # host OS instead of downloading the sources, building, and linking Busybox

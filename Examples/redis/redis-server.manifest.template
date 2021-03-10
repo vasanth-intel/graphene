@@ -111,14 +111,8 @@ sgx.thread_num = 8
 
 sgx.trusted_files.redis-server = "file:redis-server"
 
-# Glibc libraries. ld, libc, libm, libdl, librt provide common functionality;
-# pthread is needed because Redis spawns helper threads for bookkeeping.
-sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
-sgx.trusted_files.libm = "file:$(GRAPHENEDIR)/Runtime/libm.so.6"
-sgx.trusted_files.libdl = "file:$(GRAPHENEDIR)/Runtime/libdl.so.2"
-sgx.trusted_files.librt = "file:$(GRAPHENEDIR)/Runtime/librt.so.1"
-sgx.trusted_files.libpthread = "file:$(GRAPHENEDIR)/Runtime/libpthread.so.0"
+# Glibc libraries
+sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
 
 # Name Service Switch (NSS) libraries. Glibc calls these libraries as part of
 # name-service information gathering. libnss_{compat,files,nis} are the

@@ -66,13 +66,7 @@ sgx.thread_num = 16
 sgx.trusted_files.object_detection_sample_ssd = "file:$(OPENVINO_DIR)/bin/intel64/$(OPENVINO_BUILD)/object_detection_sample_ssd"
 
 # Glibc libraries
-sgx.trusted_files.ld = "file:$(GRAPHENE_DIR)/Runtime/ld-linux-x86-64.so.2"
-sgx.trusted_files.libc = "file:$(GRAPHENE_DIR)/Runtime/libc.so.6"
-sgx.trusted_files.libm = "file:$(GRAPHENE_DIR)/Runtime/libm.so.6"
-sgx.trusted_files.libdl = "file:$(GRAPHENE_DIR)/Runtime/libdl.so.2"
-sgx.trusted_files.librt = "file:$(GRAPHENE_DIR)/Runtime/librt.so.1"
-sgx.trusted_files.libutil = "file:$(GRAPHENE_DIR)/Runtime/libutil.so.1"
-sgx.trusted_files.libpthread = "file:$(GRAPHENE_DIR)/Runtime/libpthread.so.0"
+sgx.trusted_files.runtime = "file:$(GRAPHENE_DIR)/Runtime/"
 
 # Name Service Switch (NSS) libraries (Glibc dependencies)
 sgx.trusted_files.libnsscompat = "file:$(ARCH_LIBDIR)/libnss_compat.so.2"
