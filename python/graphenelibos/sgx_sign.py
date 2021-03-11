@@ -161,7 +161,8 @@ def sha256(data):
 
 
 def get_hash(filename):
-    with open(filename, 'rb') as file:
+    # TODO: Remove `str()` after dropping support for Ubuntu 16.04 and its ancient Python.
+    with open(str(filename), 'rb') as file:
         return sha256(file.read())
 
 

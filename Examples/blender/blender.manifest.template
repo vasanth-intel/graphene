@@ -56,7 +56,7 @@ sgx.thread_num = 64
 sgx.nonpie_binary = 1
 
 sgx.trusted_files.blender = "file:$(BLENDER_DIR)/blender"
-sgx.trusted_files.runtime = "file:$(GRAPHENEDIR)/Runtime/"
+sgx.trusted_files.runtime = "file:$(GRAPHENE_DIR)/Runtime/"
 
 # Loaded in runtime, ldd doesn't list them.
 sgx.trusted_files.libnuma = "file:/usr/$(ARCH_LIBDIR)/libnuma.so.1"
